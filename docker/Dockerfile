@@ -14,6 +14,7 @@ COPY ./ /app/
 RUN echo $(ls)
 RUN echo $(ls src/assets)
 RUN echo $(ls src/assets/config)
+RUN echo $(cat src/assets/version.txt)
 
 
 RUN npm run ng build --no-progress --configuration=production
