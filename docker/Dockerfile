@@ -20,6 +20,8 @@ RUN apk update && apk add jq esh
 
 COPY --from=build /app/dist/edc-demo-client /usr/share/nginx/html
 COPY --from=build /app/src/assets /usr/share/nginx/html/assets
+RUN ls /app/src/assets
+RUN cat /app/src/assets/.version
 COPY docker/default.conf.esh etc/nginx/conf.d/default.conf.esh
 
 ENV NGINX_BIND=""
