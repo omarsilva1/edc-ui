@@ -11,6 +11,7 @@ FROM node:lts as build
 WORKDIR /app
 COPY --from=npm-install /app/node_modules /app/node_modules
 COPY ./ /app/
+RUN echo $(ls)
 RUN npm run ng build --no-progress --configuration=production
 
 # Stage 3: Serve app with nginx
@@ -21,6 +22,7 @@ RUN apk update && apk add jq esh
 COPY --from=build /app/dist/edc-demo-client /usr/share/nginx/html
 COPY --from=build /app/src/assets /usr/share/nginx/html/assets
 RUN echo $(ls /app/src/assets/config)
+RUN echo $(ls /usr/share/nginx/html/assets)
 RUN echo $(cat /app/src/assets/config/.version)
 COPY docker/default.conf.esh etc/nginx/conf.d/default.conf.esh
 
