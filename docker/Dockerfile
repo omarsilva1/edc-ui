@@ -1,10 +1,6 @@
 # Stage 1: Install node modules
 FROM node:lts as npm-install
 
-RUN echo $(ls)
-RUN echo $(ls src/assets)
-RUN echo $(ls src/assets/config)
-
 WORKDIR /app
 COPY ./package*.json /app/
 RUN npm install
