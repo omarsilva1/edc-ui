@@ -30,8 +30,8 @@ jobs:
       contents: read
       packages: write
     steps:
-      # Checkout code
-#      - uses: actions/checkout@v3
+       Checkout code
+      - uses: actions/checkout@v3
 
       - name: Log in to the Container registry (push-only)
         uses: docker/login-action@v2
@@ -40,17 +40,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Store last commit's author, message and SHA
-#        run: |
-#          touch src/assets/version.txt
-#          touch src/versionSRC.txt
-#          touch versionLS.txt
-#          ls
-#          ls src/assets
-#          echo "Saving local commit details in src/assets/version.txt"
-#          git log -1 > src/assets/version.txt
-#          echo "Content of version.txt is:"
-#          cat src/assets/version.txt
+      - name: Store last commit's author, message and SHA
+        run: |
+          touch src/assets/version.txt
+          touch src/versionSRC.txt
+          touch versionLS.txt
+          ls
+          ls src/assets
+          echo "Saving local commit details in src/assets/version.txt"
+          git log -1 > src/assets/version.txt
+          echo "Content of version.txt is:"
+          cat src/assets/version.txt
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
