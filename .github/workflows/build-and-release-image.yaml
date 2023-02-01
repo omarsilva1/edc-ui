@@ -42,11 +42,8 @@ jobs:
 
       - name: Store last commit's author, message and SHA
         run: |
-          touch src/assets/config/version.txt
           echo "Saving local commit details in src/assets/version.txt"
           git log -1 > src/assets/config/version.txt
-          echo "Content of version.txt is:"
-          cat src/assets/config/version.txt
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
