@@ -44,7 +44,7 @@ jobs:
         run: |
           touch src/assets/config/version.txt
           echo "Saving local commit details in src/assets/version.txt"
-          git log -1 > src/assets/configversion.txt
+          git log -1 > src/assets/config/version.txt
           echo "Content of version.txt is:"
           cat src/assets/config/version.txt
 
