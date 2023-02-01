@@ -31,6 +31,7 @@ jobs:
       packages: write
     steps:
       # Checkout code
+#      - uses: actions/checkout@v3
 
       - name: Log in to the Container registry (push-only)
         uses: docker/login-action@v2
@@ -69,6 +70,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: docker/Dockerfile
+          context: .
           build-args: |
             EDC_UI_CONFIGURATION=production
           push: true
