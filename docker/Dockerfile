@@ -18,7 +18,7 @@ RUN echo $(cat src/assets/config/version.txt)
 RUN npm run ng build --no-progress --configuration=production
 
 # Stage 3: Serve app with nginx
-FROM nginx:1.25.0-alpine
+FROM nginx:1.25.1-alpine
 
 RUN apk update && apk add jq esh
 
