@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
     "@ng-apimock/core": "^3.11.2",
-    "dotenv": "^16.4.3",
+    "dotenv": "^16.4.4",
     "ng2-charts": "^4.1.1",
     "rxjs": "^7.8.1",
     "tslib": "^2.6.2",
